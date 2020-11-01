@@ -15,7 +15,7 @@ void setup ()
 void loop ()
 {
     delay(10);
-
+    
     // círculo em torno de cubo de baixo para cima
     for(byte linha=0; linha<cube.getLevels(); linha++)
     {
@@ -177,13 +177,15 @@ void loop ()
     cube.enableBuffer(false);
     
     //rojão
-    byte rojao1[] = {0,4, 1,4, 2,4 };
-    cube.lightSequence(rojao1, sizeof(rojao1), 1, 100);
-    byte rojao2[] = { 2,0, 2,1, 2,2, 2,3, 2,5, 2,6, 2,7, 2,8};
-    cube.lightSequence(rojao2, sizeof(rojao2), 20);
-    byte rojao3[] = { 1,0, 1,1, 1,2, 1,3, 1,5, 1,6, 1,7, 1,8};
-    cube.lightSequence(rojao3, sizeof(rojao3), 20);
-    byte rojao4[] = { 0,0, 0,1, 0,2, 0,3, 0,5, 0,6, 0,7, 0,8};
-    cube.lightSequence(rojao4, sizeof(rojao4), 20);
-    
+    for(byte x=0; x<2; x++)
+    {
+      byte rojao1[] = {0,4, 1,4, 2,4 };
+      cube.lightSequence(rojao1, sizeof(rojao1), 1, 200);
+      byte rojao2[] = { 2,0, 2,1, 2,2, 2,3, 2,5, 2,6, 2,7, 2,8};
+      cube.lightSequence(rojao2, sizeof(rojao2), 50);
+      byte rojao3[] = { 1,0, 1,1, 1,2, 1,3, 1,5, 1,6, 1,7, 1,8};
+      cube.lightSequence(rojao3, sizeof(rojao3), 50);
+      byte rojao4[] = { 0,0, 0,1, 0,2, 0,3, 0,5, 0,6, 0,7, 0,8};
+      cube.lightSequence(rojao4, sizeof(rojao4), 50);
+    }
 }
